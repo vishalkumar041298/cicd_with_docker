@@ -27,7 +27,7 @@ jobs:
         run: docker build -f Dockerfile.dev -t myapp .
       
       - name: run test
-        run: docker run --rm myapp npm run test  --watchAll=false
+        run: docker run --rm -e CI=true myapp npm run test  --watchAll=false
   
   deploy:
     name: Deploy to amazon elastic beans
